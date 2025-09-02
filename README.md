@@ -115,11 +115,6 @@ This will open the dashboard in your browser at **http://localhost:8501/** 🌐
 Contributions are welcome!  
 Feel free to fork this repo and submit a **pull request** with improvements.  
 
----
-
-## 📜 License
-
-This project is licensed under the **MIT License**.  
 
 ---
 
