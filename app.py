@@ -1,5 +1,5 @@
 import streamlit as st
-from helper.data_fetch import get_history, get_sp500_fred
+from helper.data_fetch import get_history, get_benchmark
 from helper.home import page_home
 from helper.page_analysis import page_analysis
 from helper.page_prediction import page_prediction
@@ -14,12 +14,19 @@ st.set_page_config(page_title="Stock Forecasting & Analysis", page_icon="📊", 
 load_global_css()
 
 # -------------------------------
-# Sidebar Navigation
+# Sidebar - Navigation Only
 # -------------------------------
 with st.sidebar:
     st.markdown("## 💼 Aniket’s Stock Dashboard")
-    page = st.radio("Navigate", ["🏠 Home", "🔍 Stock Analysis", "📉 Prediction", "📊 CAPM Dashboard", "ℹ️ About"], index=0)
-    
+    st.markdown("---")
+
+    # Navigation
+    page = st.radio(
+        "Navigate",
+        ["🏠 Home", "🔍 Stock Analysis", "📉 Stock Prediction", "📊 CAPM Dashboard", "ℹ️ About"],
+        index=0
+    )
+
 # -------------------------------
 # Router
 # -------------------------------
@@ -27,7 +34,7 @@ if page == "🏠 Home":
     page_home()
 elif page == "🔍 Stock Analysis":
     page_analysis()
-elif page == "📉 Prediction":
+elif page == "📉 Stock Prediction":
     page_prediction()
 elif page == "📊 CAPM Dashboard":
     page_capm_dashboard()
